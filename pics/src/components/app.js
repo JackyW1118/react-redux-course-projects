@@ -2,6 +2,7 @@ import React from "react";
 //import custom axios client
 import unsplash from "../api/unsplash";
 import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
 
 //value of 'this' is whatever  on the left of dot of the function
 //use constructor function to bind, use arrow func, wrap function in arrow func
@@ -24,7 +25,7 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: "10px" }}>
         {/* pass function as prop to search bar to execute it */}
         <SearchBar onSubmit={this.onSearchSubmit} />
-        Found: {this.state.images.length} images
+        <ImageList images={this.state.images} />
       </div>
     );
   }
