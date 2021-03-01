@@ -6,11 +6,7 @@ import VideoDetail from "./VideoDetail";
 import "./app.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { videos: [], selectedVideo: null };
-    //grab a ref to the col of the video detail
-  }
+  state = { videos: [], selectedVideo: null };
 
   //deeply nested to get video obj from VideoItem
   onVideoSelect = (video) => {
@@ -47,7 +43,6 @@ class App extends React.Component {
                 <VideoList
                   videos={this.state.videos}
                   onVideoSelect={this.onVideoSelect}
-                  colHeight={0}
                 />
               </div>
             </div>
